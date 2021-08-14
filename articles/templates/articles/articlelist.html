@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
+    <div class="container">
     {% for a in maghale %}
      <h2><a href="#">{{a.title}}</a></h2>
      <p>{{a.snippet}}</p>
      <p>{{a.date}}</p>
     {%endfor%}
+      </div>
   </body>
 </html>
