@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>I am list</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    {% for a in maghale %}
+     <h2><a href="#">{{a.title}}</a></h2>
+     <p>{{a.snippet}}</p>
+     <p>{{a.date}}</p>
+    {%endfor%}
+  </body>
+</html>
