@@ -1,0 +1,2 @@
+# djangomyBlog
+first Django project
