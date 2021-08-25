@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+    {%block title%}
+    {%endblock%}
+    </title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+           {% if user.is_authenticated %}
+           <li>
+                   <form class="logout_link" action="{%url 'accounts:logout'%}" method="post">
+                     {% csrf_token%}
+                     <button type="submit" >logout</button>
+                   </form>
+           </li>
+           <li>
+             <a href="{%url 'articles:create'%}" class="highlight">create article</a>
+           </li>
+            {% else %}
+
+          <li>
+              <a href="{% url 'accounts:login'%}">login</a>
+          </li>
+          <li>
+            <a href="{%url 'accounts:signup'%}">signup</a>
+          </li>
+          {%endif%}
+        </ul>
+      </nav>
+      <div class="header-img">
+        <a href="{% url 'articles:list' %}">
+            <img src="/static/he.jpg"  alt="blog">
+        </a>
+      </div>
+    </header>
+
+    <div class ="warpper">
+
+  {% block content %}
+  {% endblock %}
+
+    </div>
+  </body>
+</html>
